@@ -3,6 +3,7 @@ from django import forms
 from apps.Gestor.models import Iniciativa, Asignacion
 
 
+
 class IniciativaForm(forms.ModelForm):
     class Meta:
         model = Iniciativa

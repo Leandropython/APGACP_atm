@@ -6,7 +6,7 @@ Registrar
 {% endblock %}
 {%  block content %}
 
-<form  method="post">
+<form id="form2"  method="post" autocomplete="off">
   {% csrf_token %}
   {{ form.as_p }}
   <script src="http://code.jquery.com/jquery-1.0.4.js"></script>
@@ -41,7 +41,7 @@ Registrar
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group" >
         <label>Nombre y Apellido</label>
-        <input class="form-control"  type="text" name="first_name" id="texto1">
+        <input class="form-control"  type="text" name="first_name" id="texto1" required value="{{ profile.nombre}}">
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@ Registrar
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group">
         <label for="options1">Perfil</label>
-            <select name="last_name"  class="form-control" id="Seleccionar" onchange="FijarPrecio(this.id);" >
+            <select name="last_name"  class="form-control" id="Seleccionar" onchange="FijarPrecio(this.id);" required value="{{ profile.perfil}}">
             	<option value="" ></option>
             	<option value="Gestor">Gestor</option>
             	<option value="Administrador">Administrador</option>
@@ -62,7 +62,7 @@ Registrar
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group">
         <label>Nombre de Usuario</label>
-        <input class="form-control" type="text" name="username">
+        <input class="form-control" type="text" name="username" required>
       </div>
     </div>
   </div>
@@ -70,7 +70,7 @@ Registrar
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group">
         <label>Correo</label>
-        <input class="form-control" type="text" name="email" id="texto3">
+        <input class="form-control" type="text" name="email" id="texto3" required value="{{ profile.correo}}">
       </div>
     </div>
   </div>
@@ -78,7 +78,7 @@ Registrar
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group">
         <label>Contraseña</label>
-        <input class="form-control" type="password" name="password1">
+        <input class="form-control" type="password" name="password1" required>
       </div>
     </div>
   </div>
@@ -86,7 +86,7 @@ Registrar
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group">
         <label>Confirmar Contraseña</label>
-        <input class="form-control" type="password" name="password2">
+        <input class="form-control" type="password" name="password2" required>
       </div>
     </div>
   </div>

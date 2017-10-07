@@ -20,7 +20,9 @@ Asignaciones
       <tr>
         <td>{{asignacion.iniciativa}}</td>
         <td>{{asignacion.certificador}}</td>
-        <td>{{asignacion.pestanas}}</td>
+        <td>{% for pestana in asignacion.pestanas.all %}
+                {{ pestana.nombre }}
+            {% endfor %}</td>
         <td>
           <a  class="btn btn-primary" href="{% url 'gestor:Asignacion_editar' asignacion.id %}">Editar</a>
           <a  class="btn btn-danger" href="{% url 'gestor:Asignacion_eliminar' asignacion.id %}">Eliminar</a>

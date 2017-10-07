@@ -22,8 +22,9 @@ Listado de Usuarios
         <td>{{profile.perfil}}</td>
         <td>{{profile.correo}}</td>
         <td>
-    
-          <a  class="btn btn-danger" href="{% url 'usuario:Profile_eliminar' profile.id %}">Eliminar</a>
+          <a  class="btn btn-primary" href="{% url 'usuario:Profile_editar' profile.id %}">Editar</a>
+          <a  class="btn btn-danger" href="{% url 'usuario:Profile_eliminar' profile.user_id %}">Eliminar</a>
+
         </td>
       </tr>
       {% endfor %}

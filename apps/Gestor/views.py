@@ -10,6 +10,7 @@ from django.views.generic import CreateView
 from django.core.urlresolvers import reverse_lazy
 from apps.Gestor.forms import IniciativaForm, AsignacionForm
 from apps.Gestor.models import Iniciativa, Asignacion
+from apps.usuario.models import Profile
 
 
 # Create your views here.
