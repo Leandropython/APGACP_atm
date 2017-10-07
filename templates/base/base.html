@@ -1,0 +1,95 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    {% block extrastatic %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    $('.dropdown-toggle').dropdown();
+    </script>
+    <title>{% block title %} Document {% endblock %}</title>
+  </head>
+  <body>
+  <div class="container">
+  {% block navbar %}
+  <nav class="navbar navbar-default" style="background: #D92B36;">
+    <div class="container-fluid" >
+      <div class="navbar-header" >
+        <a class="navbar-brand" href="http://127.0.0.1:8000/administrador/" >Administrador</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Caso Prueba Maestro
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://127.0.0.1:8000/administrador/nuevo_cpm">Ingresar Caso de Prueba Maestro</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_caso">Listado de Casos de Prueba Maestros</a></li>
+            <li><a href= "http://127.0.0.1:8000/administrador/nuevo_bin">Ingresar BIN</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_bin">Listado de BINES</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/nuevo_atm">Ingresar ATM</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_atm">Listado de ATM</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/nuevo_estado">Ingresar Nuevos Estado de CP</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_estado">Listado de Estados de CP</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/nueva_pestana">Ingresar Nueva Pestaña</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_pestana">Listado de Pestañas</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Iniciativa
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://127.0.0.1:8000/administrador/nuevo_tipoi">Ingresar Nuevo tipo de Iniciativa</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_tipo">Listado de Tipos de Iniciativas</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/nuevo_estadoi">Ingresar Nuevo Estado de Iniciativa</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_estadoi">Listado de Estado de Iniciativa</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo Usuario
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://127.0.0.1:8000/usuario/registrar">Ingresar Nuevo Usuario</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_usuario">Listado de Usuarios</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/nuevo_perfil">Ingresar Nuevo Perfil de Usuario</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_perfil">Listado de Perfiles</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/nuevo_desarrollador">Ingresar Nuevo Desarrollador</a></li>
+            <li><a href="http://127.0.0.1:8000/administrador/listar_desarrollador">Listado de Desarrolladores</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://127.0.0.1:8000"><span class="active"></span> Cerrar Sesión</a></li>
+    </ul>
+    </div>
+  </nav>
+  {% endblock %}
+
+  {% block header %}
+  {% endblock %}
+
+  {% block content %}
+  <h5></h5>
+  {% endblock %}
+
+  {% block footer %}
+
+  <footer class="mt-5">
+    <div style="width: 80%; height: 90px; background: #ffffff; bottom: 0; position: absolute;margin-top: 20px; ">
+      <img src="../static/imagen/Redbanc vector logo.png" alt="Redbanc" align = "right" width="250px">
+      <img src="../static/imagen/logos.png" alt="Redbanc" align = "left" style="margin-top : 15px;">
+
+    </div>
+  </footer>
+
+  {% endblock %}
+</div>
+
+
+  {% block extrajs %}
+  {% endblock %}
+  </body>
+</html>

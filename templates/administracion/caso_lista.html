@@ -1,0 +1,47 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Listado de Casos de Pruebas Maestros
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Pestana</th>
+        <th>Tipo de Prueba</th>
+        <th>ATM</th>
+        <th>BIN</th>
+        <th>Prueba</th>
+        <th>Descripcion de Prueba</th>
+        <th>Resultado Esperado</th>
+        <th>Fecha</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if casos %}
+      {% for caso in casos %}
+      <tr>
+        <td>{{caso.pestana}}</td>
+        <td>{{caso.tipo_prueba}}</td>
+        <td>{{caso.ATM}}</td>
+        <td>{{caso.bin}}</td>
+        <td>{{caso.trx}}</td>
+        <td>{{caso.prueba}}</td>
+        <td>{{caso.resultado_esperado}}</td>
+        <td>{{caso.fecha}}</td>
+        <td>
+          <a  class="btn btn-primary" href="{% url 'administrador:Caso_editar' caso.id_CasoPrueba %}">Editar</a>
+          <a  class="btn btn-danger" href="{% url 'administrador:Caso_eliminar' caso.id_CasoPrueba %}">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+
+        <h1>No hay registros de Casos de Pruebas</h1>
+
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

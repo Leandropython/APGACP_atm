@@ -1,0 +1,50 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Listado de ATM
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+  <table class="table table-striped table-hover " name = "tablap">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Producto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+      {% for pestana in object_list %}
+      <tr>
+        <td>{{pestana.nombre}}</td>
+        <td>{{pestana.descripcion}}</td>
+        <td>{{pestana.producto}}</td>
+        <td>
+          <a  class="btn btn-primary" href="{% url 'administrador:Pestana_editar' pestana.id_pestana %}">Editar</a>
+          <a  class="btn btn-danger" href="{% url 'administrador:Pestana_eliminar' pestana.id_pestana %}">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+
+        <h1>No hay registros de Pestanas</h1>
+  
+
+      {% endif %}
+    </tbody>
+  </table>
+  <ul class="pager">
+    <li>
+      {% if page_obj.has_previous %}
+      <a href="?page={{page_obj.previous_page_number}}">Anterior</a>
+      {% endif %}
+    </li>
+    <li>
+      {% if page_obj.has_next %}
+      <a href="?page={{page_obj.next_page_number}}">Proximo</a>
+      {% endif %}
+    </li>
+  </ul>
+{% endblock %}

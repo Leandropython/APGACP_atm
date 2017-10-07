@@ -1,0 +1,35 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Listado de ATM
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if estados %}
+      {% for estado in estados %}
+      <tr>
+        <td>{{estado.nombre}}</td>
+        <td>{{estado.descripcion}}</td>
+        <td>
+          <a  class="btn btn-primary" href="{% url 'administrador:Estado_editar' estado.id_Estado %}">Editar</a>
+          <a  class="btn btn-danger" href="{% url 'administrador:Estado_eliminar' estado.id_Estado %}">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+
+        <h1>No hay registros de Estados</h1>
+
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

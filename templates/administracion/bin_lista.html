@@ -1,0 +1,50 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Listado de BINES
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>BIN</th>
+        <th>Banco BIN</th>
+        <th>Tipo de Producto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+      {% for bin in object_list %}
+      <tr>
+        <td>{{bin.nombre}}</td>
+        <td>{{bin.banco}}</td>
+        <td>{{bin.producto}}</td>
+        <td>
+          <a  class="btn btn-primary" href="{% url 'administrador:Bin_editar' bin.id_Bin %}">Editar</a>
+          <a  class="btn btn-danger" href="{% url 'administrador:Bin_eliminar' bin.id_Bin %}">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+
+        <h1>No hay registros de BINES</h1>
+
+      {% endif %}
+
+    </tbody>
+  </table>
+    <ul class="pager">
+      <li>
+        {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">Anterior</a>
+        {% endif %}
+      </li>
+      <li>
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">Proximo</a>
+        {% endif %}
+      </li>
+    </ul>
+{% endblock %}

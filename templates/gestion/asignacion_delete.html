@@ -1,0 +1,14 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Eliminar Asignacion
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+<form method="post">
+  {% csrf_token %}
+  <h3>¿Desea eliminar el registro?</h3>
+  <button class="btn btn-danger" type="submit">Eliminar</button>
+  <a class="btn btn-default" href="{% url 'administrador:Bin_listar' %}">Cancelar</a>
+</form>
+{% endblock %}

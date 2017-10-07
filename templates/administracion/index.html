@@ -1,0 +1,141 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+{{user.last_name}}
+{% endblock %}
+
+{% block navbar %}
+{% if user.last_name == 'Gestor' %}
+<nav class="navbar navbar-default" style="background: #D92B36;">
+  <div class="container-fluid" >
+    <div class="navbar-header" >
+      <a class="navbar-brand" href="http://127.0.0.1:8000/administrador/" >Gestor</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Iniciativa
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://127.0.0.1:8000/gestor/nueva_iniciativa">Ingresar Nueva Iniciativa</a></li>
+          <li><a href="http://127.0.0.1:8000/gestor/listar_iniciativa">Listado de Iniciativas</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_tipoi">Ingresar Nuevo tipo de Iniciativa</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_tipo">Listado de Tipos de Iniciativas</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_estadoi">Ingresar Nuevo Estado de Iniciativa</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_estadoi">Listado de Estado de Iniciativa</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/nueva_pestana">Ingresar Nueva Pestaña</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_pestana">Listado de Pestañas</a></li>
+          <li><a href="http://127.0.0.1:8000/gestor/nuevo_asignacion">Asignar Certificadores</a></li>
+          <li><a href="http://127.0.0.1:8000/gestor/listar_asignacion">Listado de Asignaciones</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo Desarrollador
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_desarrollador">Ingresar Nuevo Desarrollador</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_desarrollador">Listado de Desarrolladores</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="http://127.0.0.1:8000"><span class="active"></span> Cerrar Sesión</a></li>
+  </ul>
+  </div>
+</nav>
+{% endif %}
+
+{% if user.last_name == 'Administrador' %}
+<nav class="navbar navbar-default" style="background: #D92B36;">
+  <div class="container-fluid" >
+    <div class="navbar-header" >
+      <a class="navbar-brand" href="http://127.0.0.1:8000/administrador/" >Administrador</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Caso Prueba Maestro
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_cpm">Ingresar Caso de Prueba Maestro</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_caso">Listado de Casos de Prueba Maestros</a></li>
+          <li><a href= "http://127.0.0.1:8000/administrador/nuevo_bin">Ingresar BIN</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_bin">Listado de BINES</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_atm">Ingresar ATM</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_atm">Listado de ATM</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_estado">Ingresar Nuevos Estado de CP</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_estado">Listado de Estados de CP</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/nueva_pestana">Ingresar Nueva Pestaña</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_pestana">Listado de Pestañas</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Iniciativa
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_tipoi">Ingresar Nuevo tipo de Iniciativa</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_tipo">Listado de Tipos de Iniciativas</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_estadoi">Ingresar Nuevo Estado de Iniciativa</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_estadoi">Listado de Estado de Iniciativa</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo Usuario
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://127.0.0.1:8000/usuario/registrar">Ingresar Nuevo Usuario</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/nuevo_desarrollador">Ingresar Nuevo Desarrollador</a></li>
+          <li><a href="http://127.0.0.1:8000/administrador/listar_desarrollador">Listado de Desarrolladores</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="http://127.0.0.1:8000"><span class="active"></span> Cerrar Sesión</a></li>
+  </ul>
+  </div>
+</nav>
+{% endif %}
+
+{% if user.last_name == '' %}
+<nav class="navbar navbar-default" style="background: #D92B36;">
+  <div class="container-fluid" >
+    <div class="navbar-header" >
+      <a class="navbar-brand" href="http://127.0.0.1:8000/administrador/" >Administrador</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Nuevo Usuario
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="http://127.0.0.1:8000/usuario/profile/nueva_profile">Ingresar Nuevo Usuario</a></li>
+          <li><a href="http://127.0.0.1:8000/usuario/profile/listar_profile">Listado de Usuarios</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="http://127.0.0.1:8000"><span class="active"></span> Cerrar Sesión</a></li>
+  </ul>
+  </div>
+</nav>
+{% endif %}
+
+{% if user.last_name == 'Certificador' %}
+<nav class="navbar navbar-default" style="background: #D92B36;">
+  <div class="container-fluid" >
+    <div class="navbar-header" >
+      <a class="navbar-brand" href="http://127.0.0.1:8000/administrador/" >Certificador</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="http://127.0.0.1:8000"><span class="active"></span> Cerrar Sesión</a></li>
+  </ul>
+  </div>
+</nav>
+{% endif %}
+{% endblock %}
+
+{% block header %}
+<h3>BIENVENIDO {{user.last_name}} {{user.first_name}} </h3>
+{% endblock %}
+{% block content %}
+{% if user.last_name == 'Certificador' %}
+<img src="../static/imagen/warning.gif" height="400px" style="margin-left: 20%;">
+{% endif %}
+{% endblock %}

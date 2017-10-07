@@ -1,0 +1,34 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Listado de Tipos de Iniciativas
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if tipos %}
+      {% for tipo in tipos %}
+      <tr>
+        <td>{{tipo.nombre}}</td>
+        <td>{{tipo.descripcion}}</td>
+        <td>
+          <a  class="btn btn-primary" href="{% url 'administrador:Tipo_editar' tipo.id_Tipo_iniciativa %}">Editar</a>
+          <a  class="btn btn-danger" href="{% url 'administrador:Tipo_eliminar' tipo.id_Tipo_iniciativa %}">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+
+        <h1>No hay registros de Tipos de Iniciativas</h1>
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

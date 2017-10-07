@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block navbar %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Gestor</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Iniciativa
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Crear Iniciativa</a></li>
+          <li><a href="#">Listado de Iniciativas</a></li>
+          <li><a href="#">Enviar Correo de Asignación</a></li>
+          <li><a href="#">Enviar Correo de Notificación</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="#"><span class="active"></span> Cerrar Sesión</a></li>
+  </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block title %}
+Gestor
+{% endblock %}
+
+{% block header %}
+<h3>BIENVENIDO GESTOR</h3>
+{% endblock %}
+
+{% block content %}
+{% endblock %}

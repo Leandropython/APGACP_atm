@@ -1,0 +1,39 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Listado de Desarrolladores
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Correo</th>
+        <th>Anexo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if desarrolladors %}
+      {% for desarrollador in desarrolladors %}
+      <tr>
+        <td>{{desarrollador.nombre}}</td>
+        <td>{{desarrollador.apellido}}</td>
+        <td>{{desarrollador.correo}}</td>
+        <td>{{desarrollador.anexo}}</td>
+        <td>
+          <a  class="btn btn-primary" href="{% url 'administrador:Desarrollador_editar' desarrollador.id_Desarrollador %}">Editar</a>
+          <a  class="btn btn-danger" href="{% url 'administrador:Desarrollador_eliminar' desarrollador.id_Desarrollador %}">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+
+        <h1>No hay registros de Pestanas</h1>
+
+      {% endif %}
+    </tbody>
+  </table>
+{% endblock %}

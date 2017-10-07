@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+
+{% block navbar %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Certificador</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Iniciativa
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Ver Inicitivas Asignadas</a></li>
+          <li><a href="#">Crear Casos de Pruebas</a></li>
+          <li><a href="#">Asociar Casos de Pruebas Maestros</a></li>
+          <li><a href="#">Enviar Correo de Notificación de Termino</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="#"><span class="active"></span> Cerrar Sesión</a></li>
+  </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block title %}
+Certificador
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{%  block content %}
+<h1>Bienvenido Certificador</h1>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Ingresar Iniciativa
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit" class="btn btn-primary">OK</button>
+</form>
+{% endblock %}
+{% block footer %}
+
+<footer class="mt-5">
+  <div style="width: 100%; height: 90px; background: #ffffff; bottom: 0; position: static;margin-top: 20px; ">
+    <img src="../static/imagen/Redbanc vector logo.png" alt="Redbanc" align = "right" width="250px">
+      <img src="../static/imagen/logos.png" alt="Redbanc" align = "left" style="margin-top : 15px;">
+
+  </div>
+</footer>
+
+{% endblock %}

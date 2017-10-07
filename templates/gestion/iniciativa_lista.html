@@ -1,0 +1,53 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Listado de Iniciativas
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Codigo</th>
+        <th>Descripcion</th>
+        <th>Tipo Iniciativa</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+      {% for iniciativa in object_list %}
+      <tr>
+        <td>{{iniciativa.nombre}}</td>
+        <td>{{iniciativa.cod_iniciativa}}</td>
+        <td>{{iniciativa.descripcion}}</td>
+        <td>{{iniciativa.tipo_iniciativa}}</td>
+        <td>{{iniciativa.estado_iniciativa}}</td>
+        <td>
+          <a  class="btn btn-primary" href="{% url 'gestor:Iniciativa_editar' iniciativa.id_Iniciativa %}">Editar</a>
+
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+
+        <h1>No hay registros de Iniciativas</h1>
+
+      {% endif %}
+    </tbody>
+  </table>
+    <ul class="pager">
+      <li>
+        {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">Anterior</a>
+        {% endif %}
+      </li>
+      <li>
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">Proximo</a>
+        {% endif %}
+      </li>
+    </ul>
+{% endblock %}
