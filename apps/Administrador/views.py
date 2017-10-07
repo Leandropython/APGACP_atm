@@ -9,7 +9,7 @@ from django.views.generic import ListView
 from apps.Administrador.forms import binForm, pestanaForm, ATMForm, EstadoForm, Estado_iniciativaForm, Tipo_iniciativaForm, DesarrolladorForm, PerfilForm, UsuarioForm, CPMForm
 from apps.Administrador.models import Bin,ATM, Pestana, Estado, CasoPrueba, Tipo_iniciativa, Estado_iniciativa, Usuario, Perfil, Desarrollador
 # Create your views here.
-def index_administrador(request1):
+def index_administrador(request):
     return render(request, 'administracion/index.html')
 
 """def index(request):
