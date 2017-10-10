@@ -5,6 +5,7 @@ Acceder
 {% block navbar %}
 {% endblock %}
 {% block content %}
+
 <form method="post" style="margin-top : 10%;" >
   {% csrf_token %}
     <div class="row">
@@ -20,6 +21,9 @@ Acceder
         <div class="form-group">
           <label for="username">Contraseña:</label>
           <input class="form-control" type="password" name="password">
+          {% if form.errors %}
+          <p>Usuario o Password incorrectos</p>
+          {% endif %}
         </div>
       </div>
     </div>
