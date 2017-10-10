@@ -21,10 +21,10 @@ Acceder
         <div class="form-group">
           <label for="username">Contraseña:</label>
           <input class="form-control" type="password" name="password">
-          {% if form.errors %}
-          <p>Usuario o Password incorrectos</p>
-          {% endif %}
         </div>
+        {% if form.errors %}
+        <p class="alert alert-danger" style="width: 215px; padding: 2px;">Usuario o Password incorrectos</p>
+        {% endif %}
       </div>
     </div>
     <div class="row">
@@ -33,6 +33,7 @@ Acceder
           <input class="btn btn-primary" type="submit" value="Ingresar">
         </div>
       </div>
+
     </div>
     </form>
   {% endblock %}
