@@ -45,25 +45,19 @@ Registrar
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group">
         <label for="options1">Perfil</label>
-        {% if object_list %}
-        {% for profile in object_list %}
-            <select name="last_name"  class="form-control" id="Seleccionar" onchange="FijarPrecio(this.id);" >
-            	<option value="{{profile.nombre}}">{{profile.nombre}}</option>
+            <select name="last_name"  class="form-control" id="Seleccionar" onchange="FijarPrecio(this.id);" required value="{{ profile.perfil}}">
+            	<option value="" ></option>
             	<option value="Gestor">Gestor</option>
             	<option value="Administrador">Administrador</option>
             	<option value="Certificador">Certificador</option>
             </select>
-            {% endfor %}
-            {% endif %}
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="form-group">
