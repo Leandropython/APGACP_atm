@@ -17,7 +17,7 @@ class RegistroUsuario(CreateView):
 
 class ProfileList(ListView):
     model = Profile
-    template_name = 'usuario/profile_list.html'
+    template_name = 'usuario/profile_form.html'
 
 class ProfileCreate(CreateView):
     model=Profile
