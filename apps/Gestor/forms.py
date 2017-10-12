@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 from django import forms
 from apps.Gestor.models import Iniciativa, Asignacion
+from apps.usuario.models import Profile
 
 
 
@@ -54,6 +55,7 @@ class IniciativaForm(forms.ModelForm):
         }
 
 class AsignacionForm(forms.ModelForm):
+
     class Meta:
         model = Asignacion
 
