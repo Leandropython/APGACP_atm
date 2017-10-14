@@ -38,7 +38,7 @@ class ProfileForm(forms.ModelForm):
             'correo': 'Correo Usuario',
         }
         widgets = {
-            'nombre': forms.HiddenInput(attrs={'class':'form-control', 'id':'texto2'}),
-            'perfil': forms.HiddenInput(attrs={'class':'form-control', 'name':'Precio', 'id':'Precio'}),
-            'correo': forms.HiddenInput(attrs={'class':'form-control', 'id':'texto4'}),
+            'nombre': forms.TextInput(attrs={'class':'form-control', 'id':'texto2'}),
+            'perfil': forms.TextInput(attrs={'class':'form-control', 'name':'Precio', 'id':'Precio'}),
+            'correo': forms.TextInput(attrs={'class':'form-control', 'id':'texto4'}),
         }

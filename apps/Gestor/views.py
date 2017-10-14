@@ -51,6 +51,7 @@ class iniciativalist(ListView):
 
 
 def asignacion_view(request):
+
     if request.method == 'POST':
         form = AsignacionForm(request.POST)
         if form.is_valid():

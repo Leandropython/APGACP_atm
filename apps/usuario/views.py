@@ -19,6 +19,11 @@ class ProfileList(ListView):
     model = Profile
     template_name = 'usuario/profile_list.html'
 
+class ProfileLists(ListView):
+    model = Profile
+    queryset = Profile.objects.filter(perfil="Certificador")
+    template_name = 'gestion/asignacion_ingresar.html'
+
 class ProfileCreate(CreateView):
     model=Profile
     template_name = 'usuario/profile_form.html'

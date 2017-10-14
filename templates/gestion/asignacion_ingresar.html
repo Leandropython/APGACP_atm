@@ -7,11 +7,24 @@ Ingresar Iniciativa
 {%  block content %}
 <form method="post">
   {% csrf_token %}
-  {{ form.as_p }}
-
-  <button type="submit" class="btn btn-primary">ASIGNAR</button>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label for="options1">Certificadores</label>
+          <select name="certificador"  class="form-control">
+              {% for profile in object_list %}
+            <option value="{{profile.nombre}}">{{profile.nombre}}</option>
+                {% endfor %}
+          </select>
+    </div>
+  </div>
+</div>
+<button type="submit" class="btn btn-primary">Asignar</button>
 </form>
 {% endblock %}
+
+
+
 {% block footer %}
 
 <footer class="mt-5">

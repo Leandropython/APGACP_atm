@@ -30,5 +30,5 @@ class Iniciativa(models.Model):
 
 class Asignacion(models.Model):
     iniciativa = models.ForeignKey(Iniciativa, null = True, blank= True)
-    certificador = models.ForeignKey(Profile, null = True, blank= True)
+    certificador = models.CharField(max_length = 45, null = True, blank= True)
     pestanas = models.ManyToManyField(Pestana, null = True, blank= True)

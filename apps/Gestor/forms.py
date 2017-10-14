@@ -60,19 +60,15 @@ class AsignacionForm(forms.ModelForm):
         model = Asignacion
 
         fields =[
-            'iniciativa',
+
             'certificador',
-            'pestanas',
+
         ]
         labels = {
 
-            'iniciativa': 'Iniciativas',
-            'certificador': 'Certificadores',
-            'pestanas': 'Pestanas',
-        }
-        widgets = {
 
-            'iniciativa': forms.Select(attrs={'class':'form-control'}),
-            'certificador': forms.Select(attrs={'class':'form-control'}),
-            'pestanas': forms.CheckboxSelectMultiple(),
+            'certificador': 'Certificadores',
+
         }
+
+    
