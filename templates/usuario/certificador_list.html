@@ -1,0 +1,53 @@
+{% extends 'administracion/index.html' %}
+{% block title %}
+Listado de Certificadores
+{% endblock %}
+{% block header %}
+{% endblock %}
+{%  block content %}
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Nombre Usuario</th>
+        <th>Perfil Usuario</th>
+        <th>Correo Usuario</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if object_list %}
+      {% for certificador in object_list %}
+      <tr>
+        <td>{{certificador.nombre}}</td>
+        <td>{{certificador.perfil}}</td>
+        <td>{{certificador.correo}}</td>
+        <td>
+          <a  class="btn btn-primary" href="{% url 'usuario:Certificador_editar' certificador.id %}">Editar</a>
+          <a  class="btn btn-danger" href="{% url 'usuario:Certificador_eliminar' certificador.user_id %}">Eliminar</a>
+
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+
+        <h1>No hay registros de Certificadores</h1>
+
+      {% endif %}
+
+    </tbody>
+  </table>
+    <ul class="pager">
+      <li>
+        {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}">Anterior</a>
+        {% endif %}
+      </li>
+      <li>
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}">Proximo</a>
+        {% endif %}
+      </li>
+    </ul>
+{% endblock %}
+{% block footer %}
+{% endblock %}

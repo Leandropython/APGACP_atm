@@ -5,7 +5,7 @@ from django.db import models
 
 from apps.Administrador.models import Tipo_iniciativa, Desarrollador, Pestana
 from django.contrib.auth.models import User
-from apps.usuario.models import Profile
+from apps.usuario.models import Certificadores
 
 
 # Create your models here.
@@ -30,5 +30,5 @@ class Iniciativa(models.Model):
 
 class Asignacion(models.Model):
     iniciativa = models.ForeignKey(Iniciativa, null = True, blank= True)
-    certificador = models.ForeignKey(Profile, null = True, blank= True)
+    certificador = models.ForeignKey(Certificadores, null = True, blank= True)
     pestanas = models.ManyToManyField(Pestana, null = True, blank= True)

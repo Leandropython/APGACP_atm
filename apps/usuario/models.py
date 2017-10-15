@@ -13,3 +13,18 @@ class Profile(models.Model):
 
     def __str__(self):
         return'{}'.format(self.nombre)
+
+class Gestores(models.Model):
+    user = models.ForeignKey(User, null = True, blank= True, on_delete = models.CASCADE)
+    nombre = models.CharField(max_length=50, null = True, blank= True)
+    perfil = models.CharField(max_length=50, null = True, blank= True)
+    correo = models.CharField(max_length=250, null = True, blank= True)
+
+class Certificadores(models.Model):
+    user = models.ForeignKey(User, null = True, blank= True, on_delete = models.CASCADE)
+    nombre = models.CharField(max_length=50, null = True, blank= True)
+    perfil = models.CharField(max_length=50, null = True, blank= True)
+    correo = models.CharField(max_length=250, null = True, blank= True)
+
+    def __str__(self):
+        return'{}'.format(self.nombre)

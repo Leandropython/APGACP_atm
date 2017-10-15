@@ -49,16 +49,13 @@ class iniciativalist(ListView):
     template_name = 'gestion/iniciativa_lista.html'
     paginate_by = 3
 
+class AsignacionCreate(CreateView):
+    model= Asignacion
+    second_model= Profile
+    template_name = 'gestion/asignacion_ingresar.html'
+    form_class = AsignacionForm
+    success_url = reverse_lazy('gestor:Asignacion_listar')
 
-def asignacion_view(request):
-    if request.method == 'POST':
-        form = AsignacionForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('gestor:Asignacion_listar')
-    else:
-        form = AsignacionForm()
-    return render(request, 'gestion/asignacion_ingresar.html', {'form': form})
 
 def asignacion_list(request):
     asignacion = Asignacion.objects.all().order_by('id')

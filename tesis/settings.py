@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'tesis.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'DBTesis4',
+        'NAME': 'DBTesis6',
         'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
