@@ -12,7 +12,6 @@ class Profile(models.Model):
     correo = models.CharField(max_length=250, null = False, blank= True)
 
     def __str__(self):
-<<<<<<< HEAD
         return'{}'.format(self.nombre)
 
 class Gestores(models.Model):
@@ -29,6 +28,3 @@ class Certificadores(models.Model):
 
     def __str__(self):
         return'{}'.format(self.nombre)
-=======
-        return'{} {}'.format(self.nombre, self.perfil)
->>>>>>> b6eb04bd4fe9cbc0c1688eaf6d6ac796e69d66a8

@@ -56,8 +56,6 @@ class AsignacionCreate(CreateView):
     form_class = AsignacionForm
     success_url = reverse_lazy('gestor:Asignacion_listar')
 
-<<<<<<< HEAD
-=======
 def asignacion_view(request):
 
     if request.method == 'POST':
@@ -68,7 +66,6 @@ def asignacion_view(request):
     else:
         form = AsignacionForm()
     return render(request, 'gestion/asignacion_ingresar.html', {'form': form})
->>>>>>> b6eb04bd4fe9cbc0c1688eaf6d6ac796e69d66a8
 
 def asignacion_list(request):
     asignacion = Asignacion.objects.all().order_by('id')
